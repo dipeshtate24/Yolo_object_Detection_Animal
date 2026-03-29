@@ -41,3 +41,4 @@ async def upload_image(request: Request, file: UploadFile = File(...)):
         "request": request,
         "filename": filename
     })
+
