@@ -46,3 +46,4 @@ def image_processing(image_path):
 if __name__ == "__main__":
     # image_path = "images (1).jpg"
     image_processing()
+    
