@@ -41,9 +41,7 @@ def image_processing(image_path):
                 cv2.putText(orig_copy, f"{label}:{score:.2f}", (x1, y1-10), 
                             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
                 
-        # cv2.imshow('Object_Dectect', orig_copy)
 
 if __name__ == "__main__":
-    # image_path = "images (1).jpg"
     image_processing()
     
