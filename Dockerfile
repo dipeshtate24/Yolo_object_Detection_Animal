@@ -1,21 +1,19 @@
-FROM python:3.11.9
+FROM python:3.11-slim
 
+# Set working directory
 WORKDIR /app
 
-# set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+# Copy requirements and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy rest of application code
+COPY . .
 
-COPY requirements.txt
+# Expose the application port
+EXPOSE 8000
 
-RUN pip install -r requirements.txt
+# Command to start FastAPI application
+CMD ["uvicorn", "src.app:app", "--host", "0.0.0.0", "--port", "8000"]
 
-RUN set -eux \
-    && apk add --no-cache --virtual .build-deps build-base \
-        libressl-dev libffi-dev gcc musl-dev python3-dev \
-    && pip install --upgrade pip setuptools wheel \
-    && pip install -r /usr/src/app/requirements.txt \
-
-CMD["python", "app.py"]
 
