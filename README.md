@@ -17,7 +17,6 @@ A simple Python-based object detection application built with a modular structur
 ├── .dockerignore               # Files ignored by Docker
 ├── .gitignore                  # Files ignored by Git
 ├── Dockerfile                  # Docker image configuration
-├── docker-compose.yml          # Multi-container setup
 ├── requirements.txt            # Python dependencies
 ```
 
@@ -36,8 +35,6 @@ A simple Python-based object detection application built with a modular structur
 
 * Python 3.8+
 * Docker
-* Docker Compose
-
 ---
 
 ## 📦 Installation
